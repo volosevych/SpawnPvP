@@ -353,7 +353,9 @@ span {
   border-image-source: var(--linear-red);
   border-image-slice: 1;
   background-clip: padding-box;
-  background: var(--bg-image) no-repeat center center/cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
 
   position: relative;
   width: 100%;
