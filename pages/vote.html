@@ -50,8 +50,14 @@
                   <li>
                     <a href="./vote.html" class="mobile-nav-links">VOTE</a>
                   </li>
-                  <li><a href="#" class="mobile-nav-links">GUIDES</a></li>
-                  <li><a href="#" class="mobile-nav-links">UPDATES</a></li>
+                  <li>
+                    <a href="./guides.html" class="mobile-nav-links">GUIDES</a>
+                  </li>
+                  <li>
+                    <a href="./updates.html" class="mobile-nav-links"
+                      >UPDATES</a
+                    >
+                  </li>
                   <li><a href="#" class="mobile-nav-links">DISCORD</a></li>
                 </ul>
               </div>
@@ -72,13 +78,21 @@
             >
           </li>
           <li class="links-hover-effect">
-            <a href="#" class="u-text-primary a-tag-hover-effect p-1">VOTE</a>
+            <a href="./vote.html" class="u-text-primary a-tag-hover-effect p-1"
+              >VOTE</a
+            >
           </li>
           <li class="links-hover-effect">
-            <a href="#" class="u-text-primary a-tag-hover-effect p-1">GUIDES</a>
+            <a
+              href="./guides.html"
+              class="u-text-primary a-tag-hover-effect p-1"
+              >GUIDES</a
+            >
           </li>
           <li class="links-hover-effect">
-            <a href="#" class="u-text-primary a-tag-hover-effect p-1"
+            <a
+              href="./updates.html"
+              class="u-text-primary a-tag-hover-effect p-1"
               >UPDATES</a
             >
           </li>
@@ -103,5 +117,160 @@
         </button>
       </div>
     </header>
+
+    <main>
+      <section class="u-bg-primary small-spacing pb-5">
+        <div class="container">
+          <h2 class="mb-5 shine">Vote</h2>
+
+          <div class="row d-flex justify-content-around pt-5 g-4">
+            <!-- First Column -->
+            <div class="col-8 col-lg-6 custom-width">
+              <div class="card --card-red d-flex flex-column gap-3 p-4 h-100">
+                <h3 class="align-items-start custom-title-red w-50 mx-auto">
+                  Vote For SpawnPvP
+                </h3>
+                <p class="align-items-end">
+                  Help the community by voting on the sites below! You will be
+                  rewarded per vote! You can use in-game command
+                  <span class="fs-5"> ::claim </span> to vote and claim rewards
+                </p>
+                <div class="w-50 mx-auto">
+                  <form class="d-flex align-items-center flex-column vote-form">
+                    <input
+                      type="text"
+                      class="form-control mb-3"
+                      name="username"
+                      placeholder="Enter username"
+                      required
+                    />
+                    <button type="submit" class="submit-button">Submit</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <!-- Second Column -->
+            <div class="col-12 col-lg-4 custom-width">
+              <div class="card --card-red d-flex flex-column gap-3 p-4 h-100">
+                <h3 class="custom-font-size text-center">
+                  <span class="month-placeholder"></span>Top Votes
+                </h3>
+                <ul
+                  class="d-flex flex-column gap-2 align-items-center justify-content-center w-100"
+                >
+                  <li
+                    class="fs-4 d-flex align-items-center custom-border justify-content-between rounded w-50 w-md-100"
+                  >
+                    <img
+                      src="/assets/images/download-icon.svg"
+                      width="30"
+                      height="30"
+                      alt=""
+                    />
+                    <p>Name</p>
+                  </li>
+                  <li
+                    class="fs-4 d-flex align-items-center custom-border justify-content-between rounded w-50 w-md-100"
+                  >
+                    <img
+                      src="/assets/images/download-icon.svg"
+                      width="30"
+                      height="30"
+                      alt=""
+                    />
+                    <p>Name</p>
+                  </li>
+                  <li
+                    class="fs-4 d-flex align-items-center custom-border justify-content-between rounded w-50 w-md-100"
+                  >
+                    <img
+                      src="/assets/images/download-icon.svg"
+                      width="30"
+                      height="30"
+                      alt=""
+                    />
+                    <p>Name</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="responsive-bg footer-bg d-flex align-items-center red-line">
+      <div class="container">
+        <div
+          class="custom-z-index position-relative d-flex flex-column flex-sm-row justify-content-around align-items-center"
+        >
+          <div class="col-md-4">
+            <ul class="d-flex text-center flex-column gap-1">
+              <h3 class="fs-3">SPAWNPVP</h3>
+              <li><a href="#" class="text-secondary">Download</a></li>
+              <li><a href="#" class="text-secondary">Highscores</a></li>
+              <li><a href="#" class="text-secondary">Store</a></li>
+              <li><a href="#" class="text-secondary">Vote</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <img
+              src="../assets/images/logo.svg"
+              class="img-fluid"
+              width="422"
+              height="219"
+              alt="SpawnPvP Logo"
+            />
+          </div>
+
+          <div class="col-md-4">
+            <ul class="d-flex text-center flex-column gap-1">
+              <h3 class="fs-3">SUPPORT</h3>
+              <li><a href="#" class="text-secondary">Support Forums</a></li>
+              <li><a href="#" class="text-secondary">Community Forums</a></li>
+              <li><a href="#" class="text-secondary">Guides</a></li>
+              <li><a href="#" class="text-secondary">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Footer Socials -->
+        <div
+          class="footer-icons d-flex justify-content-center align-items-center gap-4 position-relative custom-z-index pt-2"
+        >
+          <a href="#"
+            ><img
+              src="../assets/images/discord.svg"
+              width="42"
+              height="42"
+              alt="Discord"
+          /></a>
+
+          <a href="#"
+            ><img
+              src="../assets/images/youtube.svg"
+              alt="YouTube"
+              width="58"
+              height="58"
+          /></a>
+          <a href="#"
+            ><img src="../assets/images/download-icon.svg" alt=""
+          /></a>
+        </div>
+      </div>
+    </footer>
+
+    <div class="footer-buttom u-bg-primary py-3 text-center">
+      <p class="custom-p-tag red">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex nisi
+        laudantium quasi omnis nostrum aut architecto est, rerum consectetur
+        quisquam magnam odio, nesciunt voluptatem tempore placeat, cum magni
+        nulla? Mollitia?
+      </p>
+    </div>
+
+    <script defer src="/assets/js/main.js"></script>
   </body>
 </html>

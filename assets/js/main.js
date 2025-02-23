@@ -214,4 +214,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /* ✅ Detect Username Input Change */
   usernameInput?.addEventListener("input", validateCheckoutButton);
+
+  /* ================================
+  ✅ Current Month Update
+  =================================== */
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  const currentMonth = months[new Date().getMonth()];
+
+  console.log("Current month detected:", currentMonth);
+
+  const monthElements = document.querySelectorAll(".month-placeholder");
+  console.log("Elements found:", monthElements.length);
+
+  monthElements.forEach((element) => {
+    element.textContent = currentMonth;
+  });
 });

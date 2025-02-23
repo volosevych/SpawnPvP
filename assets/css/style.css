@@ -101,10 +101,16 @@ h3 {
   line-height: normal;
 }
 
-h3.custom-title {
+h3.custom-title,
+.custom-title-red {
   font-family: "Georgia Bold", serif;
-  font-size: 29px;
+  font-size: clamp(20px, 5vw, 29px);
   color: var(--white);
+}
+
+.custom-font-size {
+  font-family: "Georgia Bold", serif;
+  font-size: clamp(20px, 5vw, 29px);
 }
 
 h4 {
@@ -116,7 +122,7 @@ h4 {
 
 span {
   color: var(--yellow);
-  font-size: 22px;
+  font-size: clamp(16px, 2vw, 20px);
   font-weight: bold;
 }
 
@@ -497,20 +503,41 @@ span {
   text-align: center;
 }
 
+.small-spacing {
+  padding-top: 200px;
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.card.--card-red {
+  border: 3px solid var(--red);
+  background-color: rgba(139, 0, 0, 0.1);
+}
+
+.--card-red {
+  border: 3px solid var(--red);
+  background-color: rgba(139, 0, 0, 0.1);
+}
+
 .image-container {
   position: relative;
   overflow: hidden;
 }
 
-.cart-btn {
+.cart-btn,
+.guides-btn {
   border: 1px solid var(--red);
   padding: 10px 20px;
   color: var(--white);
   transition: background-color 0.3s ease-in-out;
 }
 
-.cart-btn:hover {
-  background-color: var(--red);
+.cart-btn:hover,
+.guides-btn:hover {
+  background-color: rgba(139, 0, 0, 0.3);
 }
 
 /* Tabs for Store Page */
@@ -607,6 +634,10 @@ span {
   z-index: 1;
 }
 
+.image-container img.custom-width {
+  width: 95%;
+}
+
 .item-card {
   position: relative;
   width: 180px;
@@ -627,6 +658,18 @@ span {
   border: 1px solid var(--black);
   background-image: radial-gradient(#405375, #333333);
   z-index: 9;
+}
+
+.diamond-relative {
+  position: inline-block;
+  transform: rotate(45deg);
+  flex-shrink: 0;
+  width: 12px;
+  height: 12px;
+  border: 1px solid var(--black);
+  background-image: radial-gradient(#405375, #333333);
+  z-index: 9;
+  margin-right: 5px;
 }
 
 .top-border {
@@ -652,6 +695,20 @@ span {
     to right,
     transparent,
     #405375,
+    transparent
+  ) !important;
+  margin-top: 1rem;
+}
+
+.custom-title-red::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    var(--red),
     transparent
   ) !important;
   margin-top: 1rem;
@@ -887,6 +944,58 @@ span {
   visibility: visible;
   transform: translateY(0);
 }
+
+/* Submit Button for Vote */
+.submit-button {
+  position: relative;
+  padding: 10px 30px;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  border-radius: 15px;
+  border: 2px solid var(--red);
+  background: none;
+  color: var(--red);
+  cursor: pointer;
+  outline: none;
+  transition: 200ms;
+}
+
+.submit-button:hover {
+  background: var(--red);
+  color: var(--white);
+}
+
+.custom-border {
+  border: 1px solid transparent;
+  background: var(--linear-gray);
+  height: 50px;
+  padding: 0 20px;
+}
+
+.custom-border p {
+  color: var(--black);
+}
+
+@keyframes spin {
+  80% {
+    border: 2px solid transparent;
+    border-left: 2px solid var(--red);
+  }
+  100% {
+    transform: rotate(720deg);
+    border: 2px solid var(--red);
+  }
+}
+
+@keyframes check {
+  to {
+    color: var(--red);
+  }
+}
+
 /* Media Sets */
 @media (max-width: 1024px) {
   h1 {
@@ -958,6 +1067,10 @@ span {
     display: flex;
     overflow-x: scroll;
     padding-bottom: 6px;
+  }
+
+  .custom-width {
+    width: 100%;
   }
 }
 
