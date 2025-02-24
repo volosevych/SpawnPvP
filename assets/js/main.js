@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     menuToggle.addEventListener("click", function (event) {
       event.stopPropagation();
       menu.classList.toggle("active");
+      menuToggle.classList.toggle("active");
     });
 
     document.addEventListener("click", function (event) {
@@ -18,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
         !menuToggle.contains(event.target)
       ) {
         menu.classList.remove("active");
+        menuToggle.classList.remove("active");
       }
     });
   }

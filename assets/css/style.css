@@ -655,7 +655,7 @@ span {
   transform: translateX(-50%) rotate(45deg);
   width: 12px;
   height: 12px;
-  border: 1px solid var(--black);
+  border: 4px solid var(--black);
   background-image: radial-gradient(#405375, #333333);
   z-index: 9;
 }
@@ -683,7 +683,7 @@ span {
   bottom: 4px;
 }
 .bottom-diamond {
-  bottom: 6px;
+  bottom: 5px;
 }
 
 .custom-title::after {
@@ -764,7 +764,7 @@ span {
   padding: 15px;
   font-size: 20px;
   color: white;
-  background: #333;
+  background: #333333;
   border-bottom: 2px solid var(--gray);
 }
 
