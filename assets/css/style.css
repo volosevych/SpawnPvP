@@ -979,6 +979,12 @@ span {
   color: var(--black);
 }
 
+.custom-border-2 {
+  border: 3px solid var(--black);
+  background-color: rgba(139, 0, 0, 0.3);
+  padding: 20px;
+}
+
 @keyframes spin {
   80% {
     border: 2px solid transparent;
