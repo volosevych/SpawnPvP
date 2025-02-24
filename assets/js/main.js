@@ -25,6 +25,27 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   /* ================================
+  ✅ Fade-In Animation (Fixed)
+  =================================== */
+  const sections = document.querySelectorAll(".fade-in-section");
+
+  if (sections.length > 0) {
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            observer.unobserve(entry.target); // Stop observing after animation triggers
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+  }
+
+  /* ================================
   ✅ Cart Functionality (With Overlay)
   =================================== */
   const cartButton = document.getElementById("cart-button");
@@ -38,6 +59,13 @@ document.addEventListener("DOMContentLoaded", function () {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
   /* ✅ Toggle Cart Visibility & Overlay */
+  function hideCart() {
+    cartSidebar.classList.remove("show");
+    if (document.body.contains(cartOverlay)) {
+      document.body.removeChild(cartOverlay);
+    }
+  }
+
   if (cartButton && cartSidebar) {
     cartButton.addEventListener("click", (event) => {
       event.stopPropagation();
@@ -52,13 +80,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     closeCart?.addEventListener("click", hideCart);
     cartOverlay.addEventListener("click", hideCart);
-
-    function hideCart() {
-      cartSidebar.classList.remove("show");
-      if (document.body.contains(cartOverlay)) {
-        document.body.removeChild(cartOverlay);
-      }
-    }
   }
 
   /* ================================
@@ -73,12 +94,11 @@ document.addEventListener("DOMContentLoaded", function () {
       cart.push({ name, price, image, quantity: 1 });
     }
 
-    localStorage.setItem("cart", JSON.stringify(cart)); // Save cart in localStorage
+    localStorage.setItem("cart", JSON.stringify(cart));
     updateCart();
     showAlert(`✅ ${name} added to cart!`, "success", 2500);
   }
 
-  /* ✅ Attach Event Listeners to All Add to Cart Buttons */
   document.querySelectorAll(".cart-btn").forEach((button) => {
     button.addEventListener("click", (e) => {
       e.preventDefault();
@@ -118,7 +138,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     cartTotal.textContent = `$${total.toFixed(2)}`;
 
-    /* ✅ Add Remove Item Functionality */
     document.querySelectorAll(".remove-item").forEach((button) => {
       button.addEventListener("click", (e) => {
         const index = e.target.dataset.index;
@@ -130,8 +149,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  /* ✅ Load Cart Items on Page Load */
-  updateCart();
+  updateCart(); // Load cart items on page load
 
   /* ================================
   ✅ Discount Code & Terms Handling
@@ -142,7 +160,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const checkoutButton = document.querySelector(".checkout-btn");
   const usernameInput = document.getElementById("username-input");
 
-  /* ✅ Function to Show Alerts */
   function showAlert(message, type, duration = 3000) {
     let alertBox = document.getElementById("cart-alert");
 
@@ -163,7 +180,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }, duration);
   }
 
-  /* ✅ Apply Discount Code */
   applyDiscountBtn?.addEventListener("click", () => {
     const discountCode = discountInput.value.trim();
     if (discountCode === "SAVE10") {
@@ -173,18 +189,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  /* ✅ Enable Checkout Only If Terms Are Accepted */
-  termsCheckbox?.addEventListener("change", () => {
-    validateCheckoutButton();
-  });
+  termsCheckbox?.addEventListener("change", validateCheckoutButton);
 
-  /* ✅ Validate Checkout Button Activation */
   function validateCheckoutButton() {
     const username = usernameInput?.value.trim();
     checkoutButton.disabled = !termsCheckbox.checked || !username;
   }
 
-  /* ✅ Checkout Button Click Event */
   checkoutButton?.addEventListener("click", (e) => {
     const username = usernameInput?.value.trim();
 
@@ -214,35 +225,5 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 2000);
   });
 
-  /* ✅ Detect Username Input Change */
   usernameInput?.addEventListener("input", validateCheckoutButton);
-
-  /* ================================
-  ✅ Current Month Update
-  =================================== */
-  const months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-
-  const currentMonth = months[new Date().getMonth()];
-
-  console.log("Current month detected:", currentMonth);
-
-  const monthElements = document.querySelectorAll(".month-placeholder");
-  console.log("Elements found:", monthElements.length);
-
-  monthElements.forEach((element) => {
-    element.textContent = currentMonth;
-  });
 });

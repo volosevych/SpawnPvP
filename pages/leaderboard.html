@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>SpawnPvP - Guides</title>
+    <title>SpawnPvP - Highscores</title>
 
     <!-- Bootstrap Link -->
     <link
@@ -121,49 +121,35 @@
     </header>
 
     <main>
-      <section class="spacing u-bg-primary">
+      <section class="small-spacing u-bg-primary">
         <div class="container">
-          <h2 class="mb-5 shine">Title</h2>
+          <h2 class="mb-5 shine text-center text-danger">Scores</h2>
 
-          <div
-            class="card --card-red d-flex justify-content-center align-items-center mt-5 pb-5"
-          >
-            <div class="my-5 d-flex flex-column">
-              <img
-                class="image-fluid mobile-img-size"
-                src="../assets/images/logo.svg"
-                alt="SpawnPvP Logo"
-                width="240"
-                height="132"
-              />
-
-              <h3 class="mt-5 custom-title-red fs-1">Title</h3>
-              <span class="text-white pt-3 fs-5">02/23/2025</span>
-            </div>
-
-            <div class="w-75 mx-auto text-start d-flex flex-column gap-3">
-              <h4>Title</h4>
-              <p class="d-flex align-items-center justify-content-center gap-2">
-                <span class="diamond-relative"></span>
-                <span class="text-wrap text-white">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
-                  facilis enim repudiandae quis. Est minima, amet, laborum ad
-                  odit animi exercitationem cumque adipisci consequuntur
-                  molestiae pariatur. Sint qui tenetur fuga!
-                </span>
-              </p>
-
-              <p class="d-flex align-items-center justify-content-center gap-2">
-                <span class="diamond-relative"></span>
-                <span class="text-wrap text-white">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
-                  facilis enim repudiandae quis. Est minima, amet, laborum ad
-                  odit animi exercitationem cumque adipisci consequuntur
-                  molestiae pariatur. Sint qui tenetur fuga!
-                </span>
-              </p>
-            </div>
+          <!-- Search Bar -->
+          <div class="mb-3 w-25 mx-auto">
+            <input
+              type="text"
+              id="searchInput"
+              class="form-control search-box mb-4"
+              placeholder="Search player..."
+            />
           </div>
+
+          <!-- Leaderboard Table -->
+          <table
+            class="table custom-table table-dark table-striped text-center w-75 mx-auto"
+          >
+            <thead>
+              <tr>
+                <th class="table-header">Rank</th>
+                <th class="table-header">Name</th>
+                <th class="table-header">Time Played</th>
+              </tr>
+            </thead>
+            <tbody id="leaderboard-body">
+              <!-- Players will be inserted here -->
+            </tbody>
+          </table>
         </div>
       </section>
     </main>
@@ -180,9 +166,7 @@
                 <a href="./play-now.html" class="text-secondary">Download</a>
               </li>
               <li>
-                <a href="./leaderboard.html" class="text-secondary"
-                  >Highscores</a
-                >
+                <a href="leaderboard.html" class="text-secondary">Highscores</a>
               </li>
               <li><a href="./store.html" class="text-secondary">Store</a></li>
               <li><a href="./vote.html" class="text-secondary">Vote</a></li>
@@ -206,9 +190,7 @@
               <li><a href="#" class="text-secondary">Community Forums</a></li>
               <li><a href="./guides.html" class="text-secondary">Guides</a></li>
               <li>
-                <a href="./contact-us.html" class="text-secondary"
-                  >Contact Us</a
-                >
+                <a href="contact-us.html" class="text-secondary">Contact Us</a>
               </li>
             </ul>
           </div>
@@ -240,7 +222,7 @@
       </div>
     </footer>
 
-    <div class="footer-buttom u-bg-primary py-3 px-3 text-center px-3">
+    <div class="footer-buttom u-bg-primary py-3 text-center px-3">
       <p class="custom-p-tag red">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex nisi
         laudantium quasi omnis nostrum aut architecto est, rerum consectetur
@@ -250,6 +232,7 @@
     </div>
 
     <!-- Scripts -->
+    <script src="../assets/js/leaderboard.js"></script>
     <script src="../assets/js/main.js"></script>
   </body>
 </html>

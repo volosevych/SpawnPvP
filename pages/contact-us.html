@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>SpawnPvP - Guides</title>
+    <title>SpawnPvP - Contact Us</title>
 
     <!-- Bootstrap Link -->
     <link
@@ -123,45 +123,60 @@
     <main>
       <section class="spacing u-bg-primary">
         <div class="container">
-          <h2 class="mb-5 shine">Title</h2>
+          <h2 class="mb-5 shine">Contact</h2>
 
-          <div
-            class="card --card-red d-flex justify-content-center align-items-center mt-5 pb-5"
-          >
-            <div class="my-5 d-flex flex-column">
-              <img
-                class="image-fluid mobile-img-size"
-                src="../assets/images/logo.svg"
-                alt="SpawnPvP Logo"
-                width="240"
-                height="132"
-              />
+          <div class="--card-red py-5 my-5">
+            <h4>
+              If you need help, join our discord server and create a ticket!
+              <br />
+              You can also email us at
+              <a class="u-text-yellow" href="mailto:">mail</a>
+            </h4>
 
-              <h3 class="mt-5 custom-title-red fs-1">Title</h3>
-              <span class="text-white pt-3 fs-5">02/23/2025</span>
-            </div>
-
-            <div class="w-75 mx-auto text-start d-flex flex-column gap-3">
-              <h4>Title</h4>
-              <p class="d-flex align-items-center justify-content-center gap-2">
-                <span class="diamond-relative"></span>
-                <span class="text-wrap text-white">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
-                  facilis enim repudiandae quis. Est minima, amet, laborum ad
-                  odit animi exercitationem cumque adipisci consequuntur
-                  molestiae pariatur. Sint qui tenetur fuga!
-                </span>
-              </p>
-
-              <p class="d-flex align-items-center justify-content-center gap-2">
-                <span class="diamond-relative"></span>
-                <span class="text-wrap text-white">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
-                  facilis enim repudiandae quis. Est minima, amet, laborum ad
-                  odit animi exercitationem cumque adipisci consequuntur
-                  molestiae pariatur. Sint qui tenetur fuga!
-                </span>
-              </p>
+            <div class="container mt-5">
+              <div class="row justify-content-center">
+                <div class="col-md-6">
+                  <form id="contactForm">
+                    <div class="mb-3">
+                      <label for="username" class="form-label text-white"
+                        >Username</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="username"
+                        placeholder="Enter your username"
+                        required
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="email" class="form-label text-white"
+                        >Email</label
+                      >
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        placeholder="Enter your email"
+                        required
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="message" class="form-label text-white"
+                        >Message</label
+                      >
+                      <textarea
+                        class="form-control"
+                        id="message"
+                        rows="4"
+                        placeholder="Enter your message"
+                        required
+                      ></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Submit</button>
+                  </form>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -206,9 +221,7 @@
               <li><a href="#" class="text-secondary">Community Forums</a></li>
               <li><a href="./guides.html" class="text-secondary">Guides</a></li>
               <li>
-                <a href="./contact-us.html" class="text-secondary"
-                  >Contact Us</a
-                >
+                <a href="contact-us.html" class="text-secondary">Contact Us</a>
               </li>
             </ul>
           </div>
@@ -240,7 +253,7 @@
       </div>
     </footer>
 
-    <div class="footer-buttom u-bg-primary py-3 px-3 text-center px-3">
+    <div class="footer-buttom u-bg-primary py-3 text-center px-3">
       <p class="custom-p-tag red">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex nisi
         laudantium quasi omnis nostrum aut architecto est, rerum consectetur
@@ -249,7 +262,6 @@
       </p>
     </div>
 
-    <!-- Scripts -->
-    <script src="../assets/js/main.js"></script>
+    <script defer src="../assets/js/main.js"></script>
   </body>
 </html>

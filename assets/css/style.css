@@ -963,9 +963,28 @@ span {
   transition: 200ms;
 }
 
+/* Fade in animation */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+}
+
+.fade-in-section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .submit-button:hover {
   background: var(--red);
   color: var(--white);
+}
+
+.form-control:focus {
+  border-color: #ff073a !important;
+  border-top: 2px solid #ff073a !important;
+  outline: none;
+  box-shadow: 0 0 10px #ff073a;
 }
 
 .custom-border {
@@ -983,6 +1002,35 @@ span {
   border: 3px solid var(--black);
   background-color: rgba(139, 0, 0, 0.3);
   padding: 20px;
+}
+
+.custom-table {
+  background-color: #111; /* Dark background for the table */
+  border-radius: 10px;
+  overflow: hidden;
+}
+.table-header {
+  background-color: #8b0000 !important; /* Dark Red */
+  color: white !important;
+  font-weight: bold;
+}
+
+/* Highlight on Hover */
+tr:hover {
+  background-color: rgba(255, 0, 0, 0.2);
+}
+
+/* Score Colors */
+.score {
+  font-weight: bold;
+}
+
+.high-score {
+  color: #ff4747; /* Bright Red for High Scores */
+}
+
+.low-score {
+  color: #ffa500; /* Orange for Low Scores */
 }
 
 @keyframes spin {
